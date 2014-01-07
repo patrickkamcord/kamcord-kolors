@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Palette Selector</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="instructions">
+    <h1>Color Palette Selector</h1>
+    <h2>Click on a color to copy to clipboard</h2>
+  </div>
+
+  <div class="card-container">
+    <div>
+      <div class="color-card">Green</div>
+      <div class="color-card">Blue</div>
+      <div class="color-card">Yellow</div>
+      <div class="color-card">Orange</div>
+    </div>
+    <div>
+      <div class="color-card">Green</div>
+      <div class="color-card">Blue</div>
+      <div class="color-card">Yellow</div>
+      <div class="color-card">Orange</div>
+    </div>
+    <div>
+      <div class="color-card">Green</div>
+      <div class="color-card">Blue</div>
+      <div class="color-card">Yellow</div>
+      <div class="color-card">Orange</div>
+    </div>
+  </div>
+
+
+  <script>
+    var cardHeight = (window.innerHeight - 200)/3;
+    var cards = document.getElementsByClassName("color-card");
+    for(var i = 0; i < cards.length; i++){
+      var card = cards[i];
+      card.style.backgroundColor = card.innerText;
+      card.style.height = cardHeight + "px";
+      card.onmouseover = hover;
+    }
+
+    function selectText(el) {
+      var doc = window.document, set, range;
+      if (window.getSelection && doc.createRange) {
+        sel = window.getSelection();
+        range = doc.createRange();
+        range.selectNodeContents(el);
+        sel.removeAllRanges();
+        sel.addRange(range);
+      } else if (doc.body.createTextRange) {
+        range = doc.body.createTextRange();
+        range.moveToElementText(el);
+        range.select();
+      }
+    }
+
+    function hover(e) {
+      e = e || window.event;
+      var target = e.target || e.srcElement;
+      selectText(target);
+    }
+
+    // selectText(cards[1]);
+
+  </script>
+</body>
+</html>
