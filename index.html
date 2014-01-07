@@ -4,32 +4,34 @@
   <meta charset="UTF-8">
   <title>Palette Selector</title>
   <link rel="stylesheet" href="style.css">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
+  <div class="header"><img src="images/verdigrislogo.png"></div>
   <div class="instructions">
-    <h1>Color Palette Selector</h1>
-    <h2>Click on a color to copy to clipboard</h2>
+    <h1>Verdigris Color Palette Selector</h1>
+    <p>Hover over a color, then press CMD + C to copy to clipboard</p>
   </div>
 
   <div class="card-container">
     <div>
-      <div class="color-card">Green</div>
-      <div class="color-card">Blue</div>
-      <div class="color-card">Yellow</div>
-      <div class="color-card">Orange</div>
+      <div class="color-card"><span>#8ab35f</span></div>
+      <div class="color-card"><span>#586e75</span></div>
+      <div class="color-card"><span>#243333</span></div>
+      <div class="color-card"><span>#2ba197</span></div>
     </div>
     <div>
-      <div class="color-card">Green</div>
-      <div class="color-card">Blue</div>
-      <div class="color-card">Yellow</div>
-      <div class="color-card">Orange</div>
+      <div class="color-card"><span>#002b36</span></div>
+      <div class="color-card"><span>#428bca</span></div>
+      <div class="color-card"><span>#2aa198</span></div>
+      <div class="color-card"><span>#b5cf36</span></div>
     </div>
     <div>
-      <div class="color-card">Green</div>
-      <div class="color-card">Blue</div>
-      <div class="color-card">Yellow</div>
-      <div class="color-card">Orange</div>
+      <div class="color-card"><span>#d5d5d5</span></div>
+      <div class="color-card"><span>#c94916</span></div>
+      <div class="color-card"><span>#3a3c3c</span></div>
+      <div class="color-card"><span>#2e2f2f</span></div>
     </div>
   </div>
 
@@ -41,6 +43,7 @@
       var card = cards[i];
       card.style.backgroundColor = card.innerText;
       card.style.height = cardHeight + "px";
+      card.style.lineHeight = cardHeight + "px";
       card.onmouseover = hover;
     }
 
@@ -64,8 +67,6 @@
       var target = e.target || e.srcElement;
       selectText(target);
     }
-
-    // selectText(cards[1]);
 
   </script>
 </body>
